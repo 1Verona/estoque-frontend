@@ -83,6 +83,11 @@ export const ProductTable = () => {
             header="Categoria"
             body={(rowData: Produto) => rowData.categoria?.nome || 'Sem categoria'}
           />
+          <Column
+            field="quantidadeEstoque"
+            header="Estoque"
+            body={(rowData: Produto) => rowData.quantidadeEstoque ?? 0}
+          />
           <Column header="Ações" body={actionTemplate} style={{ width: '10rem' }} />
         </DataTable>
       </S.TableWrapper>

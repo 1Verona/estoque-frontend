@@ -11,4 +11,8 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Roboto', sans-serif;
     background-color: #f5f5f5;
   }
+
+  .p-toast-message-icon {
+    margin-right: 0.75rem !important;
+  }
 `

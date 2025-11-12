@@ -6,7 +6,6 @@ export const Container = styled.div`
   z-index: 1000;
   background-color: #ffffff;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-  margin-bottom: 2rem;
 
   .p-menubar {
     border: none;

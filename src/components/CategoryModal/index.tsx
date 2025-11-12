@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useCreateCategoria } from "../../hooks/useCreateCategoria";
 import { useUpdateCategoria } from "../../hooks/useUpdateCategoria";
 import type { Categoria } from "../../hooks/useCategorias";
+import { Toast } from 'primereact/toast';
+import { useRef } from 'react';
 import * as S from "./styles";
 
 type CategoryModalProps = {
@@ -17,6 +19,7 @@ export const CategoryModal = ({
 }: CategoryModalProps) => {
   const createMutation = useCreateCategoria();
   const updateMutation = useUpdateCategoria();
+  const toast = useRef<Toast>(null);
 
   const [nome, setNome] = useState("");
 
@@ -29,12 +32,22 @@ export const CategoryModal = ({
   }, [categoryToEdit]);
 
   const handleSubmit = () => {
+    if (!nome.trim()) {
+      toast.current?.show({
+        severity: 'error',
+        summary: 'Erro de Validação',
+        detail: 'O nome da categoria é obrigatório.',
+        life: 3000,
+      });
+      return;
+    }
+
     if (categoryToEdit) {
       const categoriaAtualizada: Categoria = {
-        id: categoryToEdit.id,
-        nome,
-        ...(categoryToEdit.tamanho !== undefined && { tamanho: categoryToEdit.tamanho }),
-        ...(categoryToEdit.embalagem !== undefined && { embalagem: categoryToEdit.embalagem }),
+          id: categoryToEdit.id,
+          nome,
+          ...(categoryToEdit.tamanho !== undefined && { tamanho: categoryToEdit.tamanho }),
+          ...(categoryToEdit.embalagem !== undefined && { embalagem: categoryToEdit.embalagem }),
       };
 
       updateMutation.mutate(categoriaAtualizada);
@@ -50,6 +63,8 @@ export const CategoryModal = ({
   };
 
   return (
+    <>
+    <S.StyledToast ref={toast} />
     <S.StyledDialog
       header={categoryToEdit ? "Editar Categoria" : "Cadastrar Categoria"}
       visible={isVisible}
@@ -76,5 +91,6 @@ export const CategoryModal = ({
         </S.ButtonsWrapper>
       </S.FormContainer>
     </S.StyledDialog>
+    </>
   );
 };

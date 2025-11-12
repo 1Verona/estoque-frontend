@@ -6,9 +6,9 @@ export const AppMenu = () => {
   const navigate = useNavigate()
 
   const items = [
-    { label: 'Início', icon: 'pi pi-home', command: () => navigate('/') },
     { label: 'Produtos', icon: 'pi pi-box', command: () => navigate('/produtos') },
     { label: 'Categorias', icon: 'pi pi-tags', command: () => navigate('/categorias') },
+    { label: 'Movimentações', icon: 'pi pi-sync', command: () => navigate('/movimentacoes') },
   ]
 
   return (

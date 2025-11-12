@@ -1,5 +1,7 @@
 import { Button } from 'primereact/button'
 import { Dialog } from 'primereact/dialog'
+import { Dropdown } from 'primereact/dropdown'
+import { InputNumber } from 'primereact/inputnumber'
 import { InputText } from 'primereact/inputtext'
 import { Toast } from 'primereact/toast'
 import styled from 'styled-components'
@@ -53,7 +55,7 @@ export const StyledDialog = styled(Dialog)`
   }
 `
 
-export const StyledInput = styled(InputText)`
+export const StyledInput = styled(InputNumber)`
   width: 100%;
   height: 42px;
   padding: 0.6rem 1rem;
@@ -144,3 +146,64 @@ export const StyledToast = styled(Toast)`
     margin: 3rem;
   }
 `;
+
+export const StyledDropdown = styled(Dropdown)`
+  width: 100%;
+  height: 42px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: #333;
+  padding: 0.3rem 0.8rem;
+  background-color: #fff;
+  transition: all 0.2s ease;
+
+  .p-dropdown-label { display: flex; align-items: center; padding: 0.3rem 0.8rem; }
+  .p-dropdown-trigger { border-left: 1px solid #d1d5db; color: #666; }
+
+  &:hover { border-color: #b0b0b0; }
+  &:focus-within { border-color: #007ad9; box-shadow: 0 0 0 2px rgba(0,122,217,.2); }
+
+  /* Agora estes pegam porque o painel está “dentro” */
+  .p-dropdown-panel {
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0,0,0,.08);
+    background-color: #fff;
+    margin-top: .2rem;
+    overflow: hidden;
+    min-width: 100%;
+  }
+
+  .p-dropdown-items-wrapper { max-height: 200px; overflow-y: auto; }
+  .p-dropdown-item { padding: .6rem 1rem; transition: background-color .15s ease; }
+  .p-dropdown-item:hover { background-color: #f0f4f8; }
+  .p-highlight { background-color: #007ad9 !important; color: #fff !important; }
+`
+
+export const StyledInpuet = styled(InputText)`
+  width: 100%;
+  height: 42px;
+  padding: 0.6rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: #333;
+  transition: all 0.2s ease;
+
+  &:focus {
+    outline: none;
+    border-color: #007ad9;
+    box-shadow: 0 0 0 2px rgba(0, 122, 217, 0.2);
+  }
+
+  &::placeholder {
+    color: #999;
+  }
+
+  &:disabled {
+    background-color: #f5f5f5;
+    color: #777;
+    cursor: not-allowed;
+  }
+`

@@ -2,14 +2,22 @@ import { Button } from 'primereact/button'
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  padding: 2rem;
+  min-height: calc(100vh - 70px); /* 100vh menos o menu/header, ajuste se precisar */
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  background-color: #ffffff;
+  padding: 2rem;
+
+  /* conteúdo visual da "caixa" branca */
+  background-color: #ada8a8ff;
   border-radius: 12px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-`
+
+  /* evita overflow lateral */
+  overflow-x: hidden;
+  box-sizing: border-box;
+`;
 
 export const Header = styled.div`
   display: flex;
@@ -23,16 +31,81 @@ export const Title = styled.h2`
 `
 
 export const TableWrapper = styled.div`
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 25px;
+
   .p-datatable {
-    border-radius: 10px;
-    overflow: hidden;
+    width: 100%;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
   }
 
-  .p-datatable-header {
-    background-color: #f8f9fa;
+  .p-datatable-thead > tr > th {
+    background-color: #f9fafb;
+    color: #374151;
     font-weight: 600;
+    padding: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+    font-size: 0.95rem;
   }
-`
+
+  /* Linhas do corpo */
+  .p-datatable-tbody > tr > td {
+    padding: 0.85rem 1rem;
+    font-size: 0.95rem;
+    color: #4b5563;
+    border-color: #f1f5f9;
+  }
+
+  /* Hover na linha */
+  .p-datatable-tbody > tr:hover {
+    background-color: #f3f4f6;
+    transition: 0.2s ease;
+    cursor: pointer;
+  }
+
+  .p-paginator {
+    border: none;
+    padding: 1rem 0;
+  }
+
+  .p-paginator .p-paginator-pages .p-paginator-page {
+    border-radius: 8px;
+    margin: 0 4px;
+  }
+
+  .p-paginator .p-paginator-pages .p-paginator-page.p-highlight {
+    background-color: #007ad9;
+    color: white;
+  }
+
+  .p-paginator .p-paginator-first,
+  .p-paginator .p-paginator-prev,
+  .p-paginator .p-paginator-next,
+  .p-paginator .p-paginator-last {
+    border-radius: 8px;
+  }
+
+  /* Botões de ação */
+  .p-button-rounded.p-button-text {
+    font-size: 1.1rem;
+    padding: 0.5rem;
+  }
+
+  .p-button-info {
+    color: #0284c7;
+  }
+
+  .p-button-danger {
+    color: #dc2626;
+  }
+
+  .p-button-text:hover {
+    background-color: rgba(0,0,0,0.05);
+  }
+`;
+
 export const StyledButton = styled(Button)`
     background-color: #007ad9;
   border: none;

@@ -22,6 +22,7 @@ export type ProdutoPayload = Omit<Produto, 'id'> & { id?: number | null }
         preco?: number
         precoUnitario?: number
         categoria?: string
+        quantidadeEstoque?: number
       }[]
     >('/produtos')
 
@@ -30,7 +31,7 @@ export type ProdutoPayload = Omit<Produto, 'id'> & { id?: number | null }
       nome: p.nome,
       precoUnitario: p.precoUnitario ?? p.preco ?? 0,
       unidade: 'un',
-      quantidadeEstoque: 0,
+      quantidadeEstoque: p.quantidadeEstoque ?? 0,
       quantidadeMinima: 0,
       quantidadeMaxima: 0,
       categoria: p.categoria

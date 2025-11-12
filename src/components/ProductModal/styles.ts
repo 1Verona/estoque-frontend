@@ -2,6 +2,7 @@ import { Button } from 'primereact/button'
 import { Dialog } from 'primereact/dialog'
 import { Dropdown } from 'primereact/dropdown'
 import { InputText } from 'primereact/inputtext'
+import { Toast } from 'primereact/toast'
 import styled from 'styled-components'
 
 export const FormContainer = styled.div`
@@ -136,3 +137,45 @@ export const StyledDropdown = styled(Dropdown)`
   .p-highlight { background-color: #007ad9 !important; color: #fff !important; }
 `
 
+export const StyledToast = styled(Toast)`
+  .p-toast {
+    top: 80px;
+    right: 20px;
+    width: auto;
+    max-width: 300px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .p-toast-message {
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  .p-toast-message-success {
+    background-color: #d4edda;
+    color: #155724;
+  }
+
+  .p-toast-message-error {
+    background-color: #f8d7da;
+    color: #721c24;
+  }
+
+  .p-toast-message-info {
+    background-color: #d1ecf1;
+    color: #0c5460;
+  }
+
+  .p-toast-message-warning {
+    background-color: #fff3cd;
+    color: #856404;
+  }
+
+  .p-toast .p-toast-message .p-toast-message-icon {
+    margin: 3rem;
+  }
+`;
