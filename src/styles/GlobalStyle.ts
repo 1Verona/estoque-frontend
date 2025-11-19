@@ -8,10 +8,17 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #f5f5f5;
+    font-family: 'Inter', sans-serif;
+    background-color: #f5f6fa;
+    color: #333;
+    -webkit-font-smoothing: antialiased;
   }
 
+  h1, h2, h3 {
+    color: #222;
+  }
+
+  
   .p-toast-message-icon {
     margin-right: 0.75rem !important;
   }

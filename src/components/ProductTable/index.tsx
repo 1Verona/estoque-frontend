@@ -10,7 +10,6 @@ import { Button } from 'primereact/button'
 
 export const ProductTable = () => {
   const { data, isLoading, error } = useProdutos()
-  console.log('📦 Dados vindos da API:', data)
   const deleteMutation = useDeleteProduto()
 
   const [isModalVisible, setIsModalVisible] = useState(false)

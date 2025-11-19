@@ -9,6 +9,7 @@ export const AppMenu = () => {
     { label: 'Produtos', icon: 'pi pi-box', command: () => navigate('/produtos') },
     { label: 'Categorias', icon: 'pi pi-tags', command: () => navigate('/categorias') },
     { label: 'Movimentações', icon: 'pi pi-sync', command: () => navigate('/movimentacoes') },
+    { label: 'Relatórios', icon: 'pi pi-sync', command: () => navigate('/relatorios') },
   ]
 
   return (
