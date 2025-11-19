@@ -9,7 +9,6 @@ export const Container = styled.div`
   gap: 1.5rem;
   padding: 2rem;
   background-color: ${({ theme }) => theme.colors.background};
-  border-radius: ${({ theme }) => theme.borderRadius};
   box-shadow: ${({ theme }) => theme.shadow};
   overflow-x: hidden;
   box-sizing: border-box;

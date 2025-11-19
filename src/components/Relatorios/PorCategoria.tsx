@@ -3,6 +3,7 @@ import { DataTable } from 'primereact/datatable'
 import { Column } from 'primereact/column'
 import { usePorCategoria } from '../../hooks/useRelatorios'
 import * as S from '../../pages/Relatorios/styles'
+import { TableWrapper } from '../../styles/components/TableStyles'
 
 export const PorCategoria: React.FC = () => {
   const { data, isLoading, error } = usePorCategoria()
@@ -16,12 +17,12 @@ export const PorCategoria: React.FC = () => {
         <S.Title>Produtos por Categoria</S.Title>
       </S.Header>
 
-      <S.TableWrapper>
+      <TableWrapper>
         <DataTable value={data ?? []} paginator rows={10} emptyMessage="Nenhuma categoria encontrada.">
           <Column field="nome_categoria" header="Categoria" />
           <Column field="quantidade_produtos_distintos" header="Produtos distintos" style={{ textAlign: 'right' }} />
         </DataTable>
-      </S.TableWrapper>
+      </TableWrapper>
     </S.Container>
   )
 }

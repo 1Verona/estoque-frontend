@@ -7,6 +7,7 @@ import type { Produto } from '../../hooks/useProdutos'
 import { ProductModal } from '../ProductModal'
 import * as S from './style'
 import { Button } from 'primereact/button'
+import { TableWrapper } from '../../styles/components/TableStyles'
 
 export const ProductTable = () => {
   const { data, isLoading, error } = useProdutos()
@@ -65,7 +66,7 @@ export const ProductTable = () => {
         />
       </S.Header>
 
-      <S.TableWrapper>
+      <TableWrapper>
        <DataTable
           value={data}
           paginator
@@ -89,7 +90,7 @@ export const ProductTable = () => {
           />
           <Column header="Ações" body={actionTemplate} style={{ width: '10rem' }} />
         </DataTable>
-      </S.TableWrapper>
+      </TableWrapper>
 
       <ProductModal
         isVisible={isModalVisible}

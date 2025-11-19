@@ -18,6 +18,17 @@ export const TableWrapper = styled.div`
     padding: 1rem;
     border-bottom: 1px solid #e5e7eb;
     font-size: 0.95rem;
+    text-align: center !important;
+    vertical-align: middle !important;
+  }
+
+  .p-datatable-thead > tr > th > div,
+  .p-datatable-thead > tr > th .p-column-title,
+  .p-datatable-thead > tr > th .p-sortable-column {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
   }
 
   .p-datatable-tbody > tr > td {
@@ -25,6 +36,16 @@ export const TableWrapper = styled.div`
     font-size: 0.95rem;
     color: #4b5563;
     border-color: #f1f5f9;
+    text-align: center !important;
+    vertical-align: middle !important;
+  }
+
+  .p-datatable-tbody td > div,
+  .p-datatable-tbody td .p-cell {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
   }
 
   .p-datatable-tbody > tr:hover {

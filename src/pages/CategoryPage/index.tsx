@@ -6,6 +6,7 @@ import * as S from './styles'
 import { useCategorias, type Categoria } from '../../hooks/useCategorias'
 import { useDeleteCategoria } from '../../hooks/useDeleteCategorias'
 import { CategoryModal } from '../../components/CategoryModal'
+import { TableWrapper } from '../../styles/components/TableStyles'
 
 export const CategoryPage = () => {
   const { data, isLoading, error } = useCategorias()
@@ -55,7 +56,7 @@ export const CategoryPage = () => {
         <S.StyledButton label="Cadastrar Categoria" icon="pi pi-plus" onClick={handleCreate} />
       </S.Header>
 
-      <S.TableWrapper>
+      <TableWrapper>
         <DataTable
           value={data}
           paginator
@@ -66,7 +67,7 @@ export const CategoryPage = () => {
           <Column field="nome" header="Nome" />
           <Column header="Ações" body={actionTemplate} style={{ width: '10rem' }} />
         </DataTable>
-      </S.TableWrapper>
+      </TableWrapper>
 
       <CategoryModal
         isVisible={isModalVisible}

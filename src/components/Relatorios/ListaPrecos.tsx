@@ -4,6 +4,7 @@ import { Column } from 'primereact/column'
 import { useListaPrecos } from '../../hooks/useRelatorios'
 import type { ProdutoDTO } from '../../hooks/useRelatorios'
 import * as S from '../../pages/Relatorios/styles'
+import { TableWrapper } from '../../styles/components/TableStyles'
 
 export const ListaPrecos: React.FC = () => {
   const { data, isLoading, error } = useListaPrecos()
@@ -17,7 +18,7 @@ export const ListaPrecos: React.FC = () => {
         <S.Title>Lista de Preços</S.Title>
       </S.Header>
 
-      <S.TableWrapper>
+      <TableWrapper>
         <DataTable value={data} paginator rows={10} emptyMessage="Nenhum produto encontrado.">
           <Column field="id" header="ID" style={{ width: '8rem' }} />
           <Column field="nome" header="Nome" />
@@ -27,7 +28,7 @@ export const ListaPrecos: React.FC = () => {
             style={{ textAlign: 'right' }}
           />
         </DataTable>
-      </S.TableWrapper>
+      </TableWrapper>
     </S.Container>
   )
 }

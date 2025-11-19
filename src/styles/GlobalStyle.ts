@@ -22,4 +22,18 @@ export const GlobalStyle = createGlobalStyle`
   .p-toast-message-icon {
     margin-right: 0.75rem !important;
   }
+  
+      .p-datatable-thead > tr > th,
+      .p-datatable-tbody > tr > td {
+        text-align: center !important;
+        vertical-align: middle !important;
+      }
+  
+      .p-datatable-tbody td > div,
+      .p-datatable-tbody td .p-cell {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+      }
 `

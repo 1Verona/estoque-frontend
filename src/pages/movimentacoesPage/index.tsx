@@ -4,6 +4,7 @@ import { Column } from 'primereact/column'
 import * as S from './styles'
 import { useMovimentacoes, type Movimentacao } from '../../hooks/useMovimentacoes'
 import { MovimentacaoModal } from '../../components/movimentacaoModal'
+import { TableWrapper } from '../../styles/components/TableStyles'
 
 export const MovimentacoesPage = () => {
   const { data, isLoading, error } = useMovimentacoes()
@@ -23,7 +24,7 @@ export const MovimentacoesPage = () => {
         />
       </S.Header>
 
-    <S.TableWrapper>
+    <TableWrapper>
       <DataTable value={data} paginator rows={5} emptyMessage="Nenhuma movimentação registrada.">
         <Column field="id" header="ID" style={{ width: '8rem' }} />
         <Column field="nomeProduto" header="Produto" />
@@ -37,7 +38,7 @@ export const MovimentacoesPage = () => {
           }
         />
       </DataTable>
-    </S.TableWrapper>
+    </TableWrapper>
 
       <MovimentacaoModal
         isVisible={isModalVisible}

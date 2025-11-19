@@ -4,6 +4,7 @@ import { Column } from 'primereact/column'
 import { useBalanco } from '../../hooks/useRelatorios'
 import type { BalancoResult, BalancoProduto } from '../../hooks/useRelatorios'
 import * as S from '../../pages/Relatorios/styles'
+import { TableWrapper } from '../../styles/components/TableStyles'
 
 export const Balanco: React.FC = () => {
   const { data, isLoading, error } = useBalanco()
@@ -20,7 +21,7 @@ export const Balanco: React.FC = () => {
       <div>
         <h3>Valor total do estoque: {data?.valor_total_estoque != null ? Number(data.valor_total_estoque).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }) : '-'}</h3>
 
-        <S.TableWrapper>
+        <TableWrapper>
           <DataTable value={(data as BalancoResult)?.produtos ?? []} paginator rows={10} emptyMessage="Nenhum produto encontrado.">
             <Column field="nome" header="Produto" />
             <Column field="quantidade_disponivel" header="Quantidade" style={{ textAlign: 'right' }} />
@@ -35,7 +36,7 @@ export const Balanco: React.FC = () => {
               style={{ textAlign: 'right' }}
             />
           </DataTable>
-        </S.TableWrapper>
+        </TableWrapper>
       </div>
     </S.Container>
   )
