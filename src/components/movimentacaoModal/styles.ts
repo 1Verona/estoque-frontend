@@ -56,31 +56,28 @@ export const StyledDialog = styled(Dialog)`
 `
 
 export const StyledInput = styled(InputNumber)`
-  width: 100%;
-  height: 42px;
-  padding: 0.6rem 1rem;
-  border: 1px solid #d1d5db;
-  border-radius: 8px;
-  font-size: 0.95rem;
-  color: #333;
-  transition: all 0.2s ease;
-
-  &:focus {
+  width: 100%; 
+  .p-inputtext {
+    width: 100%;
+    height: 42px;
+    padding: 0.6rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    color: #333;
+    transition: all 0.2s ease;
+  }
+  
+  .p-inputtext:focus {
     outline: none;
     border-color: #007ad9;
     box-shadow: 0 0 0 2px rgba(0, 122, 217, 0.2);
   }
 
-  &::placeholder {
-    color: #999;
+  .p-inputnumber {
+    padding: 0;
   }
-
-  &:disabled {
-    background-color: #f5f5f5;
-    color: #777;
-    cursor: not-allowed;
-  }
-`
+`;
 
 export const StyledButton = styled(Button)`
     background-color: #007ad9;
@@ -164,7 +161,6 @@ export const StyledDropdown = styled(Dropdown)`
   &:hover { border-color: #b0b0b0; }
   &:focus-within { border-color: #007ad9; box-shadow: 0 0 0 2px rgba(0,122,217,.2); }
 
-  /* Agora estes pegam porque o painel está “dentro” */
   .p-dropdown-panel {
     border: 1px solid #d1d5db;
     border-radius: 10px;
@@ -185,8 +181,6 @@ export const StyledInpuet = styled(InputText)`
   width: 100%;
   height: 42px;
   padding: 0.6rem 1rem;
-  border: 1px solid #d1d5db;
-  border-radius: 8px;
   font-size: 0.95rem;
   color: #333;
   transition: all 0.2s ease;
