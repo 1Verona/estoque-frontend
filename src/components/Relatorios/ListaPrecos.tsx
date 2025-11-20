@@ -11,7 +11,7 @@ export const ListaPrecos: React.FC = () => {
 
   if (isLoading) return <div>Carregando lista de preços...</div>
   if (error) return <div>Erro ao carregar lista de preços.</div>
-
+   
   return (
     <S.Container>
       <S.Header>
@@ -24,7 +24,7 @@ export const ListaPrecos: React.FC = () => {
           <Column field="nome" header="Nome" />
           <Column
             header="Preço"
-            body={(rowData: ProdutoDTO) => (rowData.precoUnitario != null ? Number(rowData.precoUnitario).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }) : '-')}
+            body={(rowData: ProdutoDTO) => (rowData.preco != null ? Number(rowData.preco).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }) : '-')}
             style={{ textAlign: 'right' }}
           />
         </DataTable>

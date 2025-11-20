@@ -5,7 +5,7 @@ export type ProdutoDTO = {
   id: number
   nome: string
   descricao?: string
-  precoUnitario?: number
+  preco?: number
 }
 
 const fetchListaPrecos = async (): Promise<ProdutoDTO[]> => {
