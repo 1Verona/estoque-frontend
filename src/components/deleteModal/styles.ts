@@ -15,7 +15,7 @@ export const ButtonsWrapper = styled.div`
   display: flex;
   justify-content: flex-end;
   margin-top: 1rem;
-  gap: 10px; /* Adicionado gap para espaçamento entre botões */
+  gap: 10px; 
 `;
 
 export const StyledDialog = styled(Dialog)`
@@ -28,26 +28,25 @@ export const StyledDialog = styled(Dialog)`
   .p-dialog-header {
     padding: 1.5rem 2rem;
     border-radius: 12px 12px 0 0;
-    background-color: #f9fafb;
-    border-bottom: 1px solid #e5e7eb;
+    background-color: ${({ theme }) => theme.colors.surface};
+    border-bottom: 1px solid ${({ theme }) => theme.colors.border};
     font-weight: 600;
-    color: #333;
+    color: ${({ theme }) => theme.colors.text};
   }
 
   .p-dialog {
     border-radius: 12px;
-    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
+    box-shadow: ${({ theme }) => theme.shadowLg};
   }
 
-  /* Estilo específico para o footer do DeleteModal, se necessário */
   .p-dialog-footer {
     padding: 1rem 2rem;
-    border-top: 1px solid #e5e7eb;
+    border-top: 1px solid ${({ theme }) => theme.colors.border};
   }
 `;
 
 export const StyledButton = styled(Button)`
-  background-color: ${props => (props.severity === 'danger' ? '#c0392b' : '#007ad9')};
+  background-color: ${props => (props.severity === 'danger' ? props.theme.colors.danger : props.theme.colors.primary)};
   border: none;
   color: #fff;
   font-weight: 600;
@@ -57,37 +56,34 @@ export const StyledButton = styled(Button)`
   gap: 5px;
 
   &:hover {
-    background-color: ${props => (props.severity === 'danger' ? '#a53125' : '#005fa3')};
+    background-color: ${props => (props.severity === 'danger' ? '#d32f2f' : props.theme.colors.primaryHover)};
     transform: translateY(-1px);
   }
   
-  /* Garante que o botão de texto (Cancelar) tenha o estilo correto */
   &.p-button-text {
       background-color: transparent !important;
-      color: #6c757d !important;
+      color: ${({ theme }) => theme.colors.textSecondary} !important;
       border: none;
       box-shadow: none;
   }
 `;
 
 export const DeleteMessageContainer = styled.div`
-  /* Estiliza o conteúdo da mensagem do modal */
   display: flex;
   flex-direction: column;
   gap: 10px;
-  padding: 10px 0; /* Padding interno */
+  padding: 10px 0; 
   
   font-size: 1.05rem;
-  color: #333;
+  color: ${({ theme }) => theme.colors.text};
   
   p {
     margin: 0;
   }
   
-  /* Estilo para a linha de alerta de irreversibilidade */
   .warning-text {
     font-weight: 600;
-    color: #cc0000;
+    color: ${({ theme }) => theme.colors.danger};
     margin-top: 10px;
   }
 `;
