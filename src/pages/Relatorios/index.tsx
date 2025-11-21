@@ -9,7 +9,10 @@ import Rotatividade from '../../components/Relatorios/Rotatividade'
 export const Relatorios = () => {
   return (
     <S.Container>
-      <S.Title>📊 Relatórios do Estoque</S.Title>
+      <S.Title>
+        <i className="pi pi-chart-bar" />
+        Relatórios do Estoque
+      </S.Title>
 
       <TabView>
         <TabPanel header="Lista de Preços">

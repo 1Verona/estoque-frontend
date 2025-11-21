@@ -24,7 +24,7 @@ export const ProductTable = () => {
   const handleDeleteClick = (id: number, nomeProduto: string) => {
     setIdToDelete(id);
     setNameToDelete(nomeProduto);
-    setShowDeleteModal(true); 
+    setShowDeleteModal(true);
   };
 
   const handleConfirmDelete = () => {
@@ -77,7 +77,10 @@ export const ProductTable = () => {
   return (
     <S.Container>
       <S.Header>
-        <S.Title>📦 Gerenciar Produtos</S.Title>
+        <S.Title>
+          <i className="pi pi-box" />
+          Gerenciar Produtos
+        </S.Title>
         <S.StyledButton
           label="Cadastrar Produto"
           icon="pi pi-plus"
@@ -119,8 +122,8 @@ export const ProductTable = () => {
       <DeleteModal
         isVisible={showDeleteModal}
         onHide={() => {
-          setShowDeleteModal(false); 
-          setIdToDelete(null);       
+          setShowDeleteModal(false);
+          setIdToDelete(null);
         }}
         onConfirm={handleConfirmDelete}
         // Monta a string para o modal

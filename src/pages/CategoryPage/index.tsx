@@ -23,7 +23,7 @@ export const CategoryPage = () => {
   const handleDeleteClick = (id: number, nomeProduto: string) => {
     setIdToDelete(id);
     setNameToDelete(nomeProduto);
-    setShowDeleteModal(true); 
+    setShowDeleteModal(true);
   };
 
   const handleConfirmDelete = () => {
@@ -71,7 +71,10 @@ export const CategoryPage = () => {
   return (
     <S.Container>
       <S.Header>
-        <S.Title>🏷️ Gerenciar Categorias</S.Title>
+        <S.Title>
+          <i className="pi pi-tags" />
+          Gerenciar Categorias
+        </S.Title>
         <S.StyledButton label="Cadastrar Categoria" icon="pi pi-plus" onClick={handleCreate} />
       </S.Header>
 
@@ -96,8 +99,8 @@ export const CategoryPage = () => {
       <DeleteModal
         isVisible={showDeleteModal}
         onHide={() => {
-          setShowDeleteModal(false); 
-          setIdToDelete(null);       
+          setShowDeleteModal(false);
+          setIdToDelete(null);
         }}
         onConfirm={handleConfirmDelete}
         itemName={`o produto '${nameToDelete ?? 'selecionado'}'`}

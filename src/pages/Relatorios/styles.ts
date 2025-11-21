@@ -1,79 +1,66 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  min-height: calc(100vh - 70px);
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
   padding: 2rem;
-  background-color: ${({ theme }) => theme.colors.background};
-  border-radius: 0;
-  box-shadow: ${({ theme }) => theme.shadow};
-  overflow-x: hidden;
-  box-sizing: border-box;
+  min-height: calc(100vh - 70px);
 
   .p-tabview {
     .p-tabview-nav {
-      display: flex;
-      gap: 0.75rem;
-      padding: 0.6rem;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      white-space: nowrap;
-      background: ${({ theme }) => theme.colors.background};
-      border-radius: 8px;
-      align-items: center;
+      background: transparent;
+      border: none;
+      padding: 0;
+      margin-bottom: 1.5rem;
     }
 
     .p-tabview-nav-link {
-      padding: 0.7rem 1.1rem;
-      font-size: 1.05rem;
-      border-radius: 8px;
-      margin: 0;
+      background: ${({ theme }) => theme.colors.surface};
+      border: 2px solid ${({ theme }) => theme.colors.border};
+      border-radius: 10px;
+      padding: 0.75rem 1.5rem;
+      margin-right: 0.75rem;
       color: ${({ theme }) => theme.colors.text};
-      background: #fff;
-      box-shadow: 0 1px 2px rgba(0,0,0,0.04);
-      transition: all 0.12s ease;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      border: 1px solid rgba(0,0,0,0.04);
+      font-weight: 600;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: ${({ theme }) => theme.shadow};
     }
 
     .p-tabview-nav-link:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      border-color: ${({ theme }) => theme.colors.primary};
+      box-shadow: ${({ theme }) => theme.shadowMd};
     }
 
     .p-tabview-nav-link.p-highlight {
-      background: #fff;
-      color: ${({ theme }) => theme.colors.primary};
-      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-      border: 1px solid ${({ theme }) => theme.colors.primary};
+      background: ${({ theme }) => theme.gradients.primary};
+      border-color: transparent;
+      color: white;
+      box-shadow: ${({ theme }) => theme.shadowMd};
     }
 
-    .p-tabview-nav-link:focus {
-      outline: none;
-      box-shadow: 0 0 0 3px rgba(0, 122, 217, 0.12);
-    }
-
-    .p-tabview-panel {
-      padding: 1rem 0 0 0;
+    .p-tabview-panels {
       background: transparent;
+      padding: 0;
+      border: none;
     }
 
-    .p-tabview-panels,
     .p-tabview-panel {
-      background: transparent !important;
-      border-top: none !important;
-      margin-top: 0 !important;
-      padding-top: 0 !important;
+      background: transparent;
+      padding: 0;
     }
+  }
+`
 
-    .p-tabview-nav {
-      margin-bottom: 0;
-    }
+export const Title = styled.h2`
+  font-size: 1.5rem;
+  color: ${({ theme }) => theme.colors.text};
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  i {
+    color: ${({ theme }) => theme.colors.primary};
+    font-size: 1.75rem;
   }
 `
 
@@ -81,11 +68,6 @@ export const Header = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-`
-
-export const Title = styled.h2`
-  font-size: 1.5rem;
-  color: ${({ theme }) => theme.colors.text};
 `
 
 export const TableWrapper = styled.div`
@@ -126,6 +108,3 @@ export const TableWrapper = styled.div`
     padding: 1rem 0;
   }
 `
-
-
-

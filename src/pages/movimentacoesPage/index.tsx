@@ -16,7 +16,10 @@ export const MovimentacoesPage = () => {
   return (
     <S.Container>
       <S.Header>
-        <S.Title>📦 Movimentações de Estoque</S.Title>
+        <S.Title>
+          <i className="pi pi-sync" />
+          Movimentações de Estoque
+        </S.Title>
         <S.StyledButton
           label="Registrar Movimentação"
           icon="pi pi-plus"
@@ -24,21 +27,21 @@ export const MovimentacoesPage = () => {
         />
       </S.Header>
 
-    <TableWrapper>
-      <DataTable value={data} paginator rows={5} emptyMessage="Nenhuma movimentação registrada.">
-        <Column field="id" header="ID" style={{ width: '8rem' }} />
-        <Column field="nomeProduto" header="Produto" />
-        <Column field="tipo" header="Tipo" />
-        <Column field="quantidade" header="Quantidade" />
-        <Column
-          field="dataMovimentacao"
-          header="Data"
-          body={(rowData: Movimentacao) =>
-            new Date(rowData.dataMovimentacao).toLocaleString('pt-BR')
-          }
-        />
-      </DataTable>
-    </TableWrapper>
+      <TableWrapper>
+        <DataTable value={data} paginator rows={5} emptyMessage="Nenhuma movimentação registrada.">
+          <Column field="id" header="ID" style={{ width: '8rem' }} />
+          <Column field="nomeProduto" header="Produto" />
+          <Column field="tipo" header="Tipo" />
+          <Column field="quantidade" header="Quantidade" />
+          <Column
+            field="dataMovimentacao"
+            header="Data"
+            body={(rowData: Movimentacao) =>
+              new Date(rowData.dataMovimentacao).toLocaleString('pt-BR')
+            }
+          />
+        </DataTable>
+      </TableWrapper>
 
       <MovimentacaoModal
         isVisible={isModalVisible}
