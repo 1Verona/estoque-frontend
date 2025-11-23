@@ -14,12 +14,6 @@ export const Container = styled.div`
     padding: 1rem 2rem;
   }
 
-  .p-menubar-root-list {
-    gap: 0.75rem;
-    display: flex;
-    align-items: center;
-  }
-
   .p-menuitem-link {
     border-radius: 8px;
     padding: 0.75rem 1.25rem;
@@ -43,5 +37,55 @@ export const Container = styled.div`
 
   .p-menubar-end {
     margin-left: auto;
+  }
+
+  /* Hamburger menu button */
+  .p-menubar-button {
+    color: white !important;
+    background: transparent !important;
+    border: none !important;
+  }
+
+  .p-menubar-button:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+  }
+
+  /* Mobile menu overlay - fix white background */
+  .p-menubar-root-list {
+    background: transparent !important;
+  }
+
+  /* Mobile menu items in overlay */
+  @media screen and (max-width: 960px) {
+    .p-menubar-root-list {
+      background: ${({ theme }) => theme.gradients.primary} !important;
+      border: none !important;
+      padding: 1rem !important;
+    }
+
+    .p-menuitem {
+      background: transparent !important;
+    }
+
+    .p-menuitem-content {
+      background: transparent !important;
+    }
+
+    .p-menuitem-link {
+      color: white !important;
+      background: transparent !important;
+    }
+
+    .p-menuitem-link:hover {
+      background: rgba(255, 255, 255, 0.1) !important;
+    }
+
+    .p-menuitem-text {
+      color: white !important;
+    }
+
+    .p-menuitem-icon {
+      color: white !important;
+    }
   }
 `
