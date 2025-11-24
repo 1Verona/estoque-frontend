@@ -92,56 +92,10 @@ export const GlobalStyle = createGlobalStyle`
     text-align: center !important;
   }
 
-  .p-datatable-tbody > tr:hover {
-    background-color: ${({ theme }) => theme.colors.tableHover} !important;
-    transform: scale(1.001);
-    outline: none !important;
-    box-shadow: none !important;
-  }
-
-  .p-datatable-tbody > tr:focus,
-  .p-datatable-tbody > tr:focus-visible,
-  .p-datatable-tbody > tr:focus-within,
-  .p-datatable-tbody > tr:hover {
-    outline: none !important;
-    box-shadow: none !important;
-  }
-
-  .p-datatable-tbody > tr > td:focus,
-  .p-datatable-tbody > tr > td:focus-visible,
-  .p-datatable-tbody > tr > td:focus-within,
-  .p-datatable-tbody > tr > td:hover {
-    outline: none !important;
-    box-shadow: none !important;
-  }
-
-  .p-selectable-row:focus,
-  .p-selectable-row:focus-visible,
-  .p-selectable-row:hover {
-    outline: none !important;
-    box-shadow: none !important;
-  }
-
-  .p-datatable *:focus,
-  .p-datatable *:focus-visible,
-  .p-datatable *:hover {
-    outline: none !important;
-    box-shadow: none !important;
-  }
-
   .p-button {
     font-weight: 600 !important;
     border-radius: 10px !important;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-  }
-
-  .p-button:hover:not(:disabled) {
-    transform: translateY(-2px);
-    box-shadow: ${({ theme }) => theme.shadowMd} !important;
-  }
-
-  .p-button:active:not(:disabled) {
-    transform: translateY(0);
   }
 
   .p-dialog {

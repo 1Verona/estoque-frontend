@@ -52,7 +52,6 @@ export const TableWrapper = styled.div`
   }
 
   .p-datatable-tbody > tr:hover {
-    background-color: ${({ theme }) => theme.colors.tableHover};
     transition: 0.2s ease;
     cursor: pointer;
   }
@@ -78,9 +77,5 @@ export const TableWrapper = styled.div`
 
   .p-button-danger {
     color: ${({ theme }) => theme.colors.danger};
-  }
-
-  .p-button-text:hover {
-    background-color: rgba(0, 0, 0, 0.05);
   }
 `
