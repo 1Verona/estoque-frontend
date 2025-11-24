@@ -22,12 +22,10 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: 700;
   }
 
-  /* Smooth transitions */
   button, a, input, select {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  /* MENU OVERRIDE - Remove white background from ALL states */
   .p-menuitem-content,
   .p-menuitem-link {
     background: transparent !important;
@@ -49,8 +47,6 @@ export const GlobalStyle = createGlobalStyle`
     box-shadow: none !important;
   }
 
-  /* Custom scrollbar with neutral theme */
-
   ::-webkit-scrollbar-track {
     border-radius: 10px;
   }
@@ -64,12 +60,10 @@ export const GlobalStyle = createGlobalStyle`
     background: rgba(100, 100, 100, 0.7);
   }
 
-  /* Toast styling */
   .p-toast-message-icon {
     margin-right: 0.75rem !important;
   }
 
-  /* DataTable improvements with purple theme */
   .p-datatable {
     border-radius: ${({ theme }) => theme.borderRadius} !important;
     overflow: hidden;
@@ -105,7 +99,6 @@ export const GlobalStyle = createGlobalStyle`
     box-shadow: none !important;
   }
 
-  /* Remove ALL purple focus outlines from table rows and cells */
   .p-datatable-tbody > tr:focus,
   .p-datatable-tbody > tr:focus-visible,
   .p-datatable-tbody > tr:focus-within,
@@ -122,7 +115,6 @@ export const GlobalStyle = createGlobalStyle`
     box-shadow: none !important;
   }
 
-  /* Remove focus from selectable rows */
   .p-selectable-row:focus,
   .p-selectable-row:focus-visible,
   .p-selectable-row:hover {
@@ -130,7 +122,6 @@ export const GlobalStyle = createGlobalStyle`
     box-shadow: none !important;
   }
 
-  /* Remove focus from any datatable element */
   .p-datatable *:focus,
   .p-datatable *:focus-visible,
   .p-datatable *:hover {
@@ -138,7 +129,6 @@ export const GlobalStyle = createGlobalStyle`
     box-shadow: none !important;
   }
 
-  /* Button improvements with purple theme */
   .p-button {
     font-weight: 600 !important;
     border-radius: 10px !important;
@@ -154,7 +144,6 @@ export const GlobalStyle = createGlobalStyle`
     transform: translateY(0);
   }
 
-  /* Dialog improvements */
   .p-dialog {
     border-radius: 16px !important;
     box-shadow: ${({ theme }) => theme.shadowLg} !important;
@@ -170,7 +159,7 @@ export const GlobalStyle = createGlobalStyle`
 
   .p-dialog-title {
     color: white !important;
-    font-weight: 700 !important;
+    font-weight: 800 !important;
   }
 
   .p-dialog-header-icon {
@@ -185,7 +174,6 @@ export const GlobalStyle = createGlobalStyle`
     padding: 2rem !important;
   }
 
-  /* Paginator with purple theme */
   .p-paginator .p-paginator-pages .p-paginator-page.p-highlight {
     background: ${({ theme }) => theme.gradients.primary} !important;
     border-color: transparent !important;

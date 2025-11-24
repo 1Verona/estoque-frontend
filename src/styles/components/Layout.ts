@@ -6,7 +6,7 @@ export const Container = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.6rem;
   padding: 2rem;
   background-color: ${({ theme }) => theme.colors.background};
   box-shadow: ${({ theme }) => theme.shadow};
@@ -44,6 +44,6 @@ export const StyledButton = styled(Button)`
   }
 
   .p-button-icon {
-    margin-right: 0.5rem;
+    margin-right: 0.6rem;
   }
 `
