@@ -203,7 +203,7 @@ export const ProductModal = ({
                   value: cat.id,
                 })) || []
               }
-              onChange={(e) => setCategoria(e.value)}
+              onChange={(event) => setCategoria(event.value)}
               appendTo="self"
             />
           </S.FieldGroup>
@@ -215,7 +215,7 @@ export const ProductModal = ({
               type="number"
               inputMode="numeric"
               value={quantidadeMinima.toString()}
-              onChange={(e) => setQuantidadeMinima(Number(e.target.value) || 0)}
+              onChange={(event) => setQuantidadeMinima(Number(event.target.value) || 0)}
               placeholder="0"
             />
           </S.FieldGroup>
@@ -227,7 +227,7 @@ export const ProductModal = ({
               type="number"
               inputMode="numeric"
               value={quantidadeMaxima.toString()}
-              onChange={(e) => setQuantidadeMaxima(Number(e.target.value) || 0)}
+              onChange={(event) => setQuantidadeMaxima(Number(event.target.value) || 0)}
               placeholder="0"
             />
           </S.FieldGroup>
