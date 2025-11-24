@@ -107,7 +107,7 @@ export const MovimentacaoModal = ({ isVisible, onHide }: MovimentacaoModalProps)
             <S.StyledDropdown
               value={produtoId}
               options={produtos?.map((p) => ({ label: p.nome, value: p.id })) || []}
-              onChange={(e) => setProdutoId(e.value)}
+              onChange={(event) => setProdutoId(event.value)}
               placeholder="Selecione um produto"
               appendTo="self"
             />

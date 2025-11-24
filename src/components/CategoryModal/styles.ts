@@ -7,14 +7,14 @@ import styled from 'styled-components'
 export const FormContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.6rem;
   padding: 1rem;
 `
 
 export const FieldGroup = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 0.3rem;
+  gap: 0.4rem;
 
   label {
     font-weight: 500;

@@ -16,7 +16,6 @@ export const DeleteModal = ({
     isDeleting,
 }: DeleteModalProps) => {
 
-
     return (
         <S.StyledDialog
             header="⚠️ Confirmar Exclusão"
@@ -29,8 +28,6 @@ export const DeleteModal = ({
             
             <S.DeleteMessageContainer>
                 Você tem certeza que deseja <strong>DELETAR</strong> {itemName}?
-
-               
                 <p className="warning-text">
                     Esta ação é irreversível.
                 </p>

@@ -134,7 +134,7 @@ export const ProductModal = ({
   };
 
   const handleAxiosError = (error: unknown) => {
-    let userMessage = "Erro ao salvar o produto.";
+    let userMessage = "Erro ao salvar o produto";
 
     if (axios.isAxiosError<{ message?: string }>(error)) {
       const apiMessage = error.response?.data?.message ?? "";
