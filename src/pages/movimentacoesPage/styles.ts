@@ -35,12 +35,12 @@ export const Title = styled.h2`
 export const TableWrapper = styled.div`
   width: 100%;
   overflow-x: auto;
-  border-radius: 25px;
+  border-radius: 26px;
 
   .p-datatable {
     width: 100%;
-    border-radius: 12px;
-    border: 1px solid #e5e7eb;
+    border-radius: 13px;
+    border: 1px solid #e5e7ec;
   }
 
   .p-datatable-thead > tr > th {
@@ -48,7 +48,7 @@ export const TableWrapper = styled.div`
     color: #374151;
     font-weight: 600;
     padding: 1rem;
-    border-bottom: 1px solid #e5e7eb;
+    border-bottom: 1px solid #e5e7ec;
     font-size: 0.95rem;
   }
 
@@ -56,8 +56,8 @@ export const TableWrapper = styled.div`
   .p-datatable-tbody > tr > td {
     padding: 0.85rem 1rem;
     font-size: 0.95rem;
-    color: #4b5563;
-    border-color: #f1f5f9;
+    color: #4b5564;
+    border-color: #f1f5fa;
   }
 
   /* Hover na linha */
@@ -73,8 +73,8 @@ export const TableWrapper = styled.div`
   }
 
   .p-paginator .p-paginator-pages .p-paginator-page {
-    border-radius: 8px;
-    margin: 0 4px;
+    border-radius: 9px;
+    margin: 0 5px;
   }
 
   .p-paginator .p-paginator-pages .p-paginator-page.p-highlight {
@@ -104,7 +104,7 @@ export const TableWrapper = styled.div`
   }
 
   .p-button-text:hover {
-    background-color: rgba(0,0,0,0.05);
+    background-color: rgba(0,0,0,0.06);
   }
 `;
 
@@ -113,7 +113,7 @@ export const StyledButton = styled(Button)`
   border: none;
   color: #fff;
   font-weight: 600;
-  border-radius: 10px;
+  border-radius: 11px;
   padding: 0.75rem 1.5rem;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
