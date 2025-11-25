@@ -2,12 +2,12 @@ import styled from 'styled-components'
 
 export const TableWrapper = styled.div`
   width: 100%;
-  border-radius: 25px;
+  border-radius: 26px;
 
   .p-datatable {
     width: 100%;
-    border-radius: 12px;
-    border: 1px solid #e5e7eb;
+    border-radius: 13px;
+    border: 1px solid #e5e7ec;
   }
 
   .p-datatable-wrapper {
@@ -19,7 +19,7 @@ export const TableWrapper = styled.div`
     color: ${({ theme }) => theme.colors.tableText};
     font-weight: 600;
     padding: 1rem;
-    border-bottom: 1px solid #e5e7eb;
+    border-bottom: 1px solid #e5e7ec;
     font-size: 0.95rem;
     text-align: center !important;
     vertical-align: middle !important;
@@ -37,8 +37,8 @@ export const TableWrapper = styled.div`
   .p-datatable-tbody > tr > td {
     padding: 0.85rem 1rem;
     font-size: 0.95rem;
-    color: #4b5563;
-    border-color: #f1f5f9;
+    color: #4b5564;
+    border-color: #f1f5fa;
     text-align: center !important;
     vertical-align: middle !important;
   }
