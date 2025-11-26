@@ -15,6 +15,81 @@ export const GlobalStyle = createGlobalStyle`
     color: ${({ theme }) => theme.colors.text};
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+      linear-gradient(180deg, transparent 0%, rgba(139, 92, 246, 0.03) 25%, transparent 50%, rgba(99, 102, 241, 0.03) 75%, transparent 100%),
+      linear-gradient(180deg, transparent 0%, rgba(139, 92, 246, 0.04) 30%, transparent 60%, rgba(99, 102, 241, 0.04) 80%, transparent 100%),
+      linear-gradient(180deg, transparent 0%, rgba(139, 92, 246, 0.02) 20%, transparent 55%, rgba(99, 102, 241, 0.02) 85%, transparent 100%);
+    background-size: 
+      100% 400px,
+      100% 500px,
+      100% 450px;
+    background-position: 
+      0% 0%,
+      0% 200px,
+      0% 400px;
+    animation: waveMove 25s ease-in-out infinite;
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+      linear-gradient(180deg, transparent 0%, rgba(139, 92, 246, 0.025) 35%, transparent 65%, rgba(99, 102, 241, 0.025) 90%, transparent 100%),
+      linear-gradient(180deg, transparent 0%, rgba(139, 92, 246, 0.035) 25%, transparent 50%, rgba(99, 102, 241, 0.035) 70%, transparent 100%);
+    background-size: 
+      100% 550px,
+      100% 600px;
+    background-position: 
+      0% 300px,
+      0% 600px;
+    animation: waveMoveReverse 30s ease-in-out infinite;
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  @keyframes waveMove {
+    0%, 100% {
+      background-position: 
+        0% 0%,
+        0% 200px,
+        0% 400px;
+    }
+    50% {
+      background-position: 
+        0% -50px,
+        0% 150px,
+        0% 350px;
+    }
+  }
+
+  @keyframes waveMoveReverse {
+    0%, 100% {
+      background-position: 
+        0% 300px,
+        0% 600px;
+    }
+    50% {
+      background-position: 
+        0% 350px,
+        0% 650px;
+    }
   }
 
   h1, h2, h3, h4, h5, h6 {
